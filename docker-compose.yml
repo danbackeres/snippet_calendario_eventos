@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  php-fpm:
+    image: php:8.3.11RC1-fpm-alpine
+    container_name: php-fpm
+    volumes:
+      - ./src:/var/www/html
+      - ./database:/var/www/config
+    networks:
+      - app-network
+    ports:
+      - "9000:9000"
+    entrypoint: |
+      sh -c "apk --no-cache add git zip unzip sqlite-dev && \
+             docker-php-ext-install pdo_sqlite && \
+             chown -R www-data:www-data /var/www/html && \
+             php-fpm"
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - app-network
+
+  sqlitebrowser:
+    image: lscr.io/linuxserver/sqlitebrowser:latest
+    container_name: sqlitebrowser
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./database:/config
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge

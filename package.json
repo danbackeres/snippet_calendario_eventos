@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "copy-assets": "copyfiles -u 1 node_modules/bootstrap/dist/** src/public/ && copyfiles -u 1 node_modules/jquery/dist/** src/public/js/"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1"
+  }
+}

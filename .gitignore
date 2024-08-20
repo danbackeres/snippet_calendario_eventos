@@ -1,0 +1,50 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore logs
+logs/
+*.log
+npm-debug.log*
+
+# Ignore environment variable files
+.env
+
+# Ignore composer files (se você estiver usando o Composer)
+vendor/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore npm package-lock
+package-lock.json
+
+# Ignore macOS folder attributes
+.AppleDouble
+.LSOverride
+
+# Ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Ignore build directories
+/dist/
+/build/
+
+# Ignore editor specific files
+*.swp
+*~
+.project
+.idea/
+.vscode/
+
+# Ignore Docker files
+docker-compose.override.yml
+docker-compose.local.yml
+docker-compose.prod.yml
+
+
