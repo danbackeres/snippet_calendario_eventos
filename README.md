@@ -4,6 +4,12 @@
 
 Este é um exemplo simples de um Snippet de Calendário de Eventos dinâmico. O calendário é gerado automaticamente com base no mês e ano atual e exibe eventos armazenados no banco de dados SQLite localizado no diretório `database`. Os eventos são interativos, permitindo que os usuários cliquem em uma data para ver mais detalhes.
 
+<p align="center">
+  <img src="https://github.com/danbackeres/snippet_calendario_eventos/raw/main/demo/Captura%20de%20tela%202024-08-20%20202234.png" alt="Tela Home" width="400"/>
+  <img src="https://github.com/danbackeres/snippet_calendario_eventos/raw/main/demo/Captura%20de%20tela%202024-08-20%20202240.png" alt="Calendário" width="400"/>
+  <img src="https://github.com/danbackeres/snippet_calendario_eventos/raw/main/demo/Captura%20de%20tela%202024-08-20%20202257.png" alt="Eventos" width="400"/>
+</p>
+
 ## Tecnologias Utilizadas
 
 - Docker
